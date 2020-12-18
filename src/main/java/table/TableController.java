@@ -1,6 +1,7 @@
 package table;
 
 import menu.Menu;
+import order.Order;
 import view.InputView;
 import view.OutputView;
 
@@ -25,5 +26,9 @@ public class TableController {
 
     public static void order(Table table, Menu menu, int amount) {
         table.addOrder(menu, amount);
+    }
+
+    public static void showOrder(List<Order> orders) {
+        OutputView.showOrder(orders);
     }
 }

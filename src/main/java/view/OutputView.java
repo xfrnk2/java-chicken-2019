@@ -2,6 +2,7 @@ package view;
 
 import common.MainCategory;
 import menu.Menu;
+import order.Order;
 import table.Table;
 
 import java.util.List;
@@ -16,6 +17,9 @@ public class OutputView {
     private static final String CHOICE_TABLE = "## 테이블을 선택하세요.";
     private static final String CHOICE_MENU = "## 등록할 메뉴를 선택하세요.";
     private static final String AMOUNT_MENU = "## 메뉴의 수량을 입력하세요.";
+    private static final String ORDER_TITLE = "## 주문 내역";
+    private static final String ORDER_CATEGORY = "메뉴 수량 금액";
+
 
     public static void printTables(final List<Table> tables) {
         System.out.println("## 테이블 목록");
@@ -68,5 +72,16 @@ public class OutputView {
 
     public static void amountMenu() {
         System.out.println(AMOUNT_MENU);
+    }
+
+    public static void showOrder(List<Order> orders) {
+        System.out.println(ORDER_TITLE);
+        System.out.println(ORDER_CATEGORY);
+        for (Order order : orders) {
+            Menu menu = order.getMenu();
+            int totalPrice = order.getAmount() * menu.getPrice();
+            System.out.println(menu.getName() + " " + order.getAmount() + " " + totalPrice);
+        }
+        System.out.println();
     }
 }

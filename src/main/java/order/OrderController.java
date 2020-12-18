@@ -14,7 +14,7 @@ public class OrderController {
                 MenuController.showMenu();
                 Menu menu = MenuController.selectMenu();
                 int amount = MenuController.menuAmount(table, menu);
-                System.out.println(amount);
+                TableController.order(table, menu, amount);
                 break;
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());

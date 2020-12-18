@@ -1,5 +1,6 @@
 import common.MainCategory;
 import order.OrderController;
+import payment.PaymentController;
 import view.InputView;
 import view.OutputView;
 
@@ -20,7 +21,8 @@ public class PosMachine {
                 orderController.run();
             }
             if (option.equals(MainCategory.PAY.getCategory())) {
-
+                PaymentController paymentController = new PaymentController();
+                paymentController.run();
             }
             if (option.equals(MainCategory.EXIT.getCategory())) {
                 break;

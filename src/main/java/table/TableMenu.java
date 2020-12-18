@@ -2,7 +2,9 @@ package table;
 
 import menu.Menu;
 import menu.MenuService;
+import order.Order;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,6 +12,7 @@ import java.util.Map;
 public class TableMenu {
     private static final String EXCEED_MAXIMUM_AMOUNT = "[ERROR] 최대 수량은 99개입니다.";
     private static final int MAXIMUM_AMOUNT = 99;
+    private static final int MINIMUM_AMOUNT = 1;
 
     private Map<Menu, Integer> menuAmount;
 
@@ -32,5 +35,16 @@ public class TableMenu {
             throw new IllegalArgumentException(EXCEED_MAXIMUM_AMOUNT);
         }
         menuAmount.replace(menu, currentAmount + amount);
+    }
+
+    public List<Order> getOrder() {
+        List<Order> orders = new ArrayList<>();
+        for (Menu menu : menuAmount.keySet()) {
+            if (menuAmount.get(menu) >= MINIMUM_AMOUNT) {
+                Order order = new Order(menu, menuAmount.get(menu));
+                orders.add(order);
+            }
+        }
+        return orders;
     }
 }

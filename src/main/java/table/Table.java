@@ -1,6 +1,9 @@
 package table;
 
 import menu.Menu;
+import order.Order;
+
+import java.util.List;
 
 public class Table {
     private final int number;
@@ -21,6 +24,10 @@ public class Table {
 
     public boolean canAdditionalOrder(Menu menu) {
         return tableMenu.canOrder(menu);
+    }
+
+    public List<Order> getOrder() {
+        return tableMenu.getOrder();
     }
 
     public void addOrder(Menu menu, int amount) {
