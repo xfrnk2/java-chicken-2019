@@ -41,7 +41,7 @@ public class InputView {
         return number;
     }
 
-    public static int amountMenu() {
+    public static int amountMenu(Table table, Menu menu) {
         return scanner.nextInt();
     }
 }

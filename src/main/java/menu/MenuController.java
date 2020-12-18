@@ -1,5 +1,6 @@
 package menu;
 
+import table.Table;
 import view.InputView;
 import view.OutputView;
 
@@ -22,8 +23,11 @@ public class MenuController {
         return InputView.selectMenuNumber(menus);
     }
 
-    public static int menuAmount() {
+    public static int menuAmount(Table table, Menu menu) {
         OutputView.amountMenu();
-        return InputView.amountMenu();
+        if (table.canAdditionalOrder(menu)) {
+            return InputView.amountMenu(table, menu);
+        }
+        return 0;
     }
 }

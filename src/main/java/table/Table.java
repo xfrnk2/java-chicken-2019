@@ -1,10 +1,14 @@
 package table;
 
+import menu.Menu;
+
 public class Table {
     private final int number;
+    private TableMenu tableMenu;
 
     public Table(final int number) {
         this.number = number;
+        this.tableMenu = new TableMenu();
     }
 
     public int getNumber() {
@@ -13,6 +17,10 @@ public class Table {
 
     public boolean isSame(int number) {
         return this.number == number;
+    }
+
+    public boolean canAdditionalOrder(Menu menu) {
+        return tableMenu.canOrder(menu);
     }
 
     @Override
