@@ -1,5 +1,7 @@
 package menu;
 
+import table.Table;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -20,5 +22,14 @@ public class MenuRepository {
 
     public static List<Menu> menus() {
         return Collections.unmodifiableList(menus);
+    }
+
+    public static Menu findByNumber(int menuNumber) {
+        for (Menu menu : menus) {
+            if (menu.isSame(menuNumber)) {
+                return menu;
+            }
+        }
+        return null;
     }
 }

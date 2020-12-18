@@ -14,6 +14,7 @@ public class OutputView {
     private static final String CONNECTION = " - ";
     private static final String CHOICE_OPTION = "## 원하는 기능을 선택하세요.";
     private static final String CHOICE_TABLE = "## 테이블을 선택하세요.";
+    private static final String CHOICE_MENU = "## 등록할 메뉴를 선택하세요.";
 
     public static void printTables(final List<Table> tables) {
         System.out.println("## 테이블 목록");
@@ -58,5 +59,9 @@ public class OutputView {
 
     public static void selectTable() {
         System.out.println(CHOICE_TABLE);
+    }
+
+    public static void selectMenu() {
+        System.out.println(CHOICE_MENU);
     }
 }

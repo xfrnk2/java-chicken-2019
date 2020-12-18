@@ -1,7 +1,9 @@
 package view;
 
 import common.MainCategory;
+import menu.Menu;
 import table.Table;
+import view.validation.NotExistMenu;
 import view.validation.NotExistOption;
 import view.validation.NotExistTable;
 import view.validation.NotNumber;
@@ -28,6 +30,14 @@ public class InputView {
         NotNumber.validate(tableNumber);
         int number = Integer.parseInt(tableNumber);
         NotExistTable.validate(tables, number);
+        return number;
+    }
+
+    public static int selectMenuNumber(List<Menu> menus) {
+        String menuNumber = scanner.nextLine();
+        NotNumber.validate(menuNumber);
+        int number = Integer.parseInt(menuNumber);
+        NotExistMenu.validate(menus, number);
         return number;
     }
 }
