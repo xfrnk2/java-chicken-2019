@@ -19,6 +19,10 @@ public class OutputView {
     private static final String AMOUNT_MENU = "## 메뉴의 수량을 입력하세요.";
     private static final String ORDER_TITLE = "## 주문 내역";
     private static final String ORDER_CATEGORY = "메뉴 수량 금액";
+    private static final String TABLE_PAYMENT = "번 테이블의 결제를 진행합니다.";
+    private static final String PAYMENT_METHOD = "## 신용 카드는 1번, 현금은 2번";
+    private static final String WON = "원";
+    private static final String FINAL_PRICE = "## 최종 결제할 금액";
 
 
     public static void printTables(final List<Table> tables) {
@@ -82,6 +86,20 @@ public class OutputView {
             int totalPrice = order.getAmount() * menu.getPrice();
             System.out.println(menu.getName() + " " + order.getAmount() + " " + totalPrice);
         }
+        System.out.println();
+    }
+
+    public static void pay(Table table) {
+        System.out.println(table.getNumber() + TABLE_PAYMENT);
+    }
+
+    public static void selectPaymentMethod() {
+        System.out.println(PAYMENT_METHOD);
+    }
+
+    public static void printTotalPrice(int totalPrice) {
+        System.out.println(FINAL_PRICE);
+        System.out.println(totalPrice + WON);
         System.out.println();
     }
 }

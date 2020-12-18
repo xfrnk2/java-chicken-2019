@@ -44,4 +44,8 @@ public class InputView {
     public static int amountMenu(Table table, Menu menu) {
         return scanner.nextInt();
     }
+
+    public static String selectPaymentMethod() {
+        return scanner.next();
+    }
 }
