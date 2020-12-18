@@ -13,6 +13,7 @@ public class OutputView {
     private static final String ADD_ORDER = "1 - 주문등록";
     private static final String PAYMENT = "2 - 결제하기";
     private static final String EXIT_MACHINE = "3 - 프로그램 종료";
+    private static final String CHOICE_OPTION = "## 원하는 기능을 선택하세요.";
 
     public static void printTables(final List<Table> tables) {
         System.out.println("## 테이블 목록");
@@ -48,5 +49,9 @@ public class OutputView {
         System.out.println(PAYMENT);
         System.out.println(EXIT_MACHINE);
         System.out.println();
+    }
+
+    public static void choiceOption() {
+        System.out.println(CHOICE_OPTION);
     }
 }
