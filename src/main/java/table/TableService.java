@@ -1,5 +1,7 @@
 package table;
 
+import menu.Category;
+import menu.Menu;
 import order.Order;
 
 import java.util.List;
@@ -18,10 +20,21 @@ public class TableService {
 
     public static int calculatePrice(List<Order> orders) {
         int price = 0;
+        int chickenTypeAmount = 0;
+        int drinkTypeAmount = 0;
         for (Order order : orders) {
-            price += (order.getAmount() * order.getMenu().getPrice());
-            price -= (order.getAmount() / DISCOUNT_CONDITION) * DISCOUNT_PRICE;
+            Menu menu = order.getMenu();
+            String category = menu.getCategory().getName();
+            price += (order.getAmount() * menu.getPrice());
+            if (category.equals(Category.CHICKEN.getName())) {
+                chickenTypeAmount += order.getAmount();
+            }
+            if (category.equals(Category.BEVERAGE.getName())) {
+                drinkTypeAmount += order.getAmount();
+            }
         }
+        price -= (chickenTypeAmount / DISCOUNT_CONDITION) * DISCOUNT_PRICE;
+        price -= (drinkTypeAmount / DISCOUNT_CONDITION) * DISCOUNT_PRICE;
         return price;
     }
 }
