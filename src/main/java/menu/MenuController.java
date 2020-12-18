@@ -26,10 +26,10 @@ public class MenuController {
     }
 
     public static int menuAmount(Table table, Menu menu) {
-        OutputView.amountMenu();
         if (!table.canAdditionalOrder(menu)) {
             throw new IllegalArgumentException(ALREADY_MAXIMUM_AMOUNT);
         }
+        OutputView.amountMenu();
         return InputView.amountMenu(table, menu);
     }
 }

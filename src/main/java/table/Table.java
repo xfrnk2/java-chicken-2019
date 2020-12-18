@@ -23,6 +23,10 @@ public class Table {
         return tableMenu.canOrder(menu);
     }
 
+    public void addOrder(Menu menu, int amount) {
+        tableMenu.add(menu, amount);
+    }
+
     @Override
     public String toString() {
         return Integer.toString(number);

@@ -20,13 +20,13 @@ public class InputView {
     }
 
     public static String selectOption(List<MainCategory> optionList) {
-        String option = scanner.nextLine();
+        String option = scanner.next();
         NotExistOption.validate(optionList, option);
         return option;
     }
 
     public static int selectTableNumber(List<Table> tables) {
-        String tableNumber = scanner.nextLine();
+        String tableNumber = scanner.next();
         NotNumber.validate(tableNumber);
         int number = Integer.parseInt(tableNumber);
         NotExistTable.validate(tables, number);
@@ -34,7 +34,7 @@ public class InputView {
     }
 
     public static int selectMenuNumber(List<Menu> menus) {
-        String menuNumber = scanner.nextLine();
+        String menuNumber = scanner.next();
         NotNumber.validate(menuNumber);
         int number = Integer.parseInt(menuNumber);
         NotExistMenu.validate(menus, number);

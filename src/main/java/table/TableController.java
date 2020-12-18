@@ -1,5 +1,6 @@
 package table;
 
+import menu.Menu;
 import view.InputView;
 import view.OutputView;
 
@@ -20,5 +21,9 @@ public class TableController {
         OutputView.selectTable();
         List<Table> tables = TableService.allTables();
         return InputView.selectTableNumber(tables);
+    }
+
+    public static void order(Table table, Menu menu, int amount) {
+        table.addOrder(menu, amount);
     }
 }
