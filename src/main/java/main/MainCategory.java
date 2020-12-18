@@ -16,4 +16,8 @@ public enum MainCategory {
     public String getCategory() {
         return category;
     }
+
+    public String getDescription() {
+        return description;
+    }
 }
