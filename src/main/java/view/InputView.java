@@ -40,4 +40,8 @@ public class InputView {
         NotExistMenu.validate(menus, number);
         return number;
     }
+
+    public static int amountMenu() {
+        return scanner.nextInt();
+    }
 }

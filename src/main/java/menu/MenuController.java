@@ -21,4 +21,9 @@ public class MenuController {
         List<Menu> menus = MenuService.allMenus();
         return InputView.selectMenuNumber(menus);
     }
+
+    public static int menuAmount() {
+        OutputView.amountMenu();
+        return InputView.amountMenu();
+    }
 }
