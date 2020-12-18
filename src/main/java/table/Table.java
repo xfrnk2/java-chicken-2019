@@ -1,4 +1,4 @@
-package domain;
+package table;
 
 public class Table {
     private final int number;

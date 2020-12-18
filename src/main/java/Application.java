@@ -1,7 +1,7 @@
-import domain.Menu;
-import domain.MenuRepository;
-import domain.Table;
-import domain.TableRepository;
+import menu.Menu;
+import menu.MenuRepository;
+import table.Table;
+import table.TableRepository;
 import view.InputView;
 import view.OutputView;
 

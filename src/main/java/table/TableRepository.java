@@ -1,4 +1,6 @@
-package domain;
+package table;
+
+import table.Table;
 
 import java.util.ArrayList;
 import java.util.Collections;
