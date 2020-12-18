@@ -6,6 +6,7 @@ import order.Order;
 import view.InputView;
 import view.OutputView;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class TableController {
@@ -38,7 +39,8 @@ public class TableController {
     public static void pay(Table table, List<Order> order) {
         OutputView.pay(table);
         OutputView.selectPaymentMethod();
-        String method = InputView.selectPaymentMethod();
+        List<PaymentMethod> methodList = Arrays.asList(PaymentMethod.values());
+        String method = InputView.selectPaymentMethod(methodList);
         int totalPrice = TableService.calculatePrice(order);
 
         if (method.equals(PaymentMethod.CASH.getValue())) {

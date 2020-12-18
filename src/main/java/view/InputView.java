@@ -1,12 +1,10 @@
 package view;
 
 import common.MainCategory;
+import common.PaymentMethod;
 import menu.Menu;
 import table.Table;
-import view.validation.NotExistMenu;
-import view.validation.NotExistOption;
-import view.validation.NotExistTable;
-import view.validation.NotNumber;
+import view.validation.*;
 
 import java.util.List;
 import java.util.Scanner;
@@ -45,7 +43,9 @@ public class InputView {
         return scanner.nextInt();
     }
 
-    public static String selectPaymentMethod() {
-        return scanner.next();
+    public static String selectPaymentMethod(List<PaymentMethod> methodList) {
+        String method = scanner.next();
+        NotExistPaymentMethod.validate(methodList, method);
+        return method;
     }
 }
