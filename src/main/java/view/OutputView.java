@@ -1,8 +1,7 @@
 package view;
 
-import main.MainCategory;
+import common.MainCategory;
 import menu.Menu;
-import sun.rmi.rmic.Main;
 import table.Table;
 
 import java.util.List;
@@ -14,6 +13,7 @@ public class OutputView {
     private static final String MAIN_TITLE = "## 메인화면";
     private static final String CONNECTION = " - ";
     private static final String CHOICE_OPTION = "## 원하는 기능을 선택하세요.";
+    private static final String CHOICE_TABLE = "## 테이블을 선택하세요.";
 
     public static void printTables(final List<Table> tables) {
         System.out.println("## 테이블 목록");
@@ -53,5 +53,9 @@ public class OutputView {
 
     public static void choiceOption() {
         System.out.println(CHOICE_OPTION);
+    }
+
+    public static void selectTable() {
+        System.out.println(CHOICE_TABLE);
     }
 }

@@ -1,7 +1,10 @@
 package view;
 
-import main.MainCategory;
+import common.MainCategory;
+import table.Table;
 import view.validation.NotExistOption;
+import view.validation.NotExistTable;
+import view.validation.NotNumber;
 
 import java.util.List;
 import java.util.Scanner;
@@ -14,9 +17,17 @@ public class InputView {
         return scanner.nextInt();
     }
 
-    public static int selectOption(List<MainCategory> optionList) {
+    public static String selectOption(List<MainCategory> optionList) {
         String option = scanner.nextLine();
         NotExistOption.validate(optionList, option);
-        return Integer.parseInt(option);
+        return option;
+    }
+
+    public static int selectTableNumber(List<Table> tables) {
+        String tableNumber = scanner.nextLine();
+        NotNumber.validate(tableNumber);
+        int number = Integer.parseInt(tableNumber);
+        NotExistTable.validate(tables, number);
+        return number;
     }
 }

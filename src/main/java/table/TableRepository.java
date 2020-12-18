@@ -1,7 +1,5 @@
 package table;
 
-import table.Table;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -20,5 +18,14 @@ public class TableRepository {
 
     public static List<Table> tables() {
         return Collections.unmodifiableList(tables);
+    }
+
+    public static Table findByNumber(int number) {
+        for (Table table : tables) {
+            if (table.isSame(number)) {
+                return table;
+            }
+        }
+        return null;
     }
 }

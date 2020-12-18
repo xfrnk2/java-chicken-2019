@@ -1,4 +1,4 @@
-package main;
+package common;
 
 public enum MainCategory {
     REGISTER("1", "주문등록"),

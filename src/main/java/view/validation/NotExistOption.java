@@ -1,6 +1,6 @@
 package view.validation;
 
-import main.MainCategory;
+import common.MainCategory;
 
 import java.util.ArrayList;
 import java.util.List;

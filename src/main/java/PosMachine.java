@@ -1,4 +1,5 @@
-import main.MainCategory;
+import common.MainCategory;
+import order.OrderController;
 import view.InputView;
 import view.OutputView;
 
@@ -12,16 +13,23 @@ public class PosMachine {
     public void run() {
         while (true) {
             OutputView.printMainView();
-            int option = askOptionChoice();
+            String option = askOptionChoice();
 
-            if (option == Integer.parseInt(MainCategory.EXIT.getCategory())) {
+            if (option.equals(MainCategory.REGISTER.getCategory())) {
+                OrderController orderController = new OrderController();
+                orderController.run();
+            }
+            if (option.equals(MainCategory.PAY.getCategory())) {
+
+            }
+            if (option.equals(MainCategory.EXIT.getCategory())) {
                 break;
             }
         }
     }
 
-    private int askOptionChoice() {
-        int option = 0;
+    private String askOptionChoice() {
+        String option = "";
         try {
             OutputView.choiceOption();
             List<MainCategory> optionList = Arrays.asList(MainCategory.values());
