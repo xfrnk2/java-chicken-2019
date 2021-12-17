@@ -1,6 +1,9 @@
-apply plugin: 'java'
-apply plugin: 'eclipse'
-
+plugins {
+    id 'java'
+	id 'org.ec4j.editorconfig' version '0.0.3'
+	id 'checkstyle'
+}
+group 'camp.nextstep.edu'
 version = '1.0.0'
 sourceCompatibility = 1.8
 
@@ -11,4 +14,25 @@ repositories {
 dependencies {
     testCompile('org.junit.jupiter:junit-jupiter:5.5.2')
     testCompile('org.assertj:assertj-core:3.14.0')
+	implementation('com.github.woowacourse-projects:mission-utils:1.0.0')
+	implementation('com.google.guava:guava:31.0.1-jre')
 }
+
+test {
+    useJUnitPlatform()
+}
+
+
+checkstyle {
+    maxWarnings = 0
+    configFile = file("${rootDir}/naver-checkstyle-rules.xml")
+    configProperties = ["suppressionFile" : "${rootDir}/naver-checkstyle-suppressions.xml"]
+    toolVersion ="8.24"
+}
+
+editorconfig {
+    excludes = ['build']
+}
+
+check.dependsOn editorconfigCheck
+
