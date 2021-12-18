@@ -6,6 +6,14 @@ public class PosMachine {
 	private static final OutputView outputView = new OutputView();
 
 	public void run() {
-		outputView.printMainMenus();
+		while(true) {
+			try {
+				outputView.printMainMenus();
+				outputView.printSelectMainMenuRequest();
+				String option = inputView.selectMainMenu();
+			} catch (IllegalArgumentException e) {
+				System.out.println(e.getMessage());
+			}
+		}
 	}
 }

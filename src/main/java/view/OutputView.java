@@ -11,6 +11,7 @@ public class OutputView {
     private static final String TABLE_FORMAT = "| %s |";
     private static final String BOTTOM_LINE = "└ ─ ┘";
     private static final String MAIN_SCREEN = "## 메인화면";
+    private static final String SELECT_MAIN_MENU_REQUEST = "## 원하는 기능을 선택하세요.";
 
     public void printTables(final List<Table> tables) {
         System.out.println("## 테이블 목록");
@@ -45,5 +46,9 @@ public class OutputView {
 		for (MainCategory category : MainCategory.values()) {
 			System.out.println(String.format("%s - %s", category.getCategory(), category.getDescription()));
 		}
+	}
+
+	public void printSelectMainMenuRequest() {
+		System.out.println(SELECT_MAIN_MENU_REQUEST);
 	}
 }
